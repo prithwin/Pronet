@@ -6,7 +6,15 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-<context:component-scan base-package="com.pronet.rest.controller,com.pronet.service"/>
+<context:component-scan base-package="com.pronet.rest.controller,com.pronet.service,com.pronet.eao"/>
 <mvc:annotation-driven/>
+
+    <beans>
+
+        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+            <property name="persistenceUnitName" value="NewPersistenceUnit"/>
+        </bean>
+
+    </beans>
 
 </beans>

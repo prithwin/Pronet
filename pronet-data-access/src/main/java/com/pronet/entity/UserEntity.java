@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Data
 public class UserEntity {
     @Id
+    @Column(name = "ID")
     private int id;
 
     @Column(name = "FIRST_NAME")

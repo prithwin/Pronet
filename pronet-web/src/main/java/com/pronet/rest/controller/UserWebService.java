@@ -15,7 +15,7 @@ import java.util.UUID;
 @RequestMapping("/user")
 public class UserWebService {
 
-    @Resource
+    @Resource(name = "userServiceImpl")
     private UserService userService;
 
     @CrossOrigin
