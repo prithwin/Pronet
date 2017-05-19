@@ -19,7 +19,8 @@ public class UserWebService {
     private UserService userService;
 
     @CrossOrigin
-    @RequestMapping(value = "/{userId}",method = RequestMethod.GET,produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(value = "/{userId}",method = RequestMethod.GET,produces =
+            {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
     public @ResponseBody UserVo getUserDetails(@PathVariable(value = "userId") int userId){
         return userService.getUser(userId);
     }
