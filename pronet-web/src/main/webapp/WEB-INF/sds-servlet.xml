@@ -10,11 +10,9 @@
 <mvc:annotation-driven/>
 
     <beans>
-
         <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-            <property name="persistenceUnitName" value="NewPersistenceUnit"/>
+            <property name="persistenceUnitName" value="proconpu"/>
         </bean>
-
     </beans>
 
 </beans>
