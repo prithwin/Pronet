@@ -1,20 +1,18 @@
 package com.pronet.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by pr250155 on 5/19/17.
  */
 @Entity(name = "USER")
 @Data
-public class UserEntity {
-    @Id
-    @Column(name = "ID")
-    private int id;
+@EqualsAndHashCode(callSuper = false)
+public class UserEntity extends GenericEntity {
 
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -24,4 +22,8 @@ public class UserEntity {
 
     @Column(name = "GUID")
     private String guid;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_ID")
+    private Set<SkillEntity> skillSet;
 }

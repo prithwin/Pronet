@@ -2,6 +2,7 @@ package com.pronet.rest.controller;
 
 import com.pronet.service.UserService;
 import org.pronet.common.vo.UserVo;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,19 +28,9 @@ public class UserWebService {
         return userService.getUser(userId);
     }
 
-    @CrossOrigin
-    @RequestMapping(value = "/mirror/{userId}",method = RequestMethod.POST,produces = {MediaType.APPLICATION_XML_VALUE}
-            ,consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    public @ResponseBody UserVo mirror(@PathVariable int userId,@RequestPart MultipartFile multipartFile){
-        System.out.print("");
-        return null;
-    }
-
-    @CrossOrigin
-    @RequestMapping(value = "/mirror2/{userId}",method = RequestMethod.POST,produces = {MediaType.APPLICATION_XML_VALUE},
-            consumes = {MediaType.APPLICATION_XML_VALUE})
-    public @ResponseBody UserVo mirror2(@PathVariable int userId,@RequestBody @Validated UserVo chot){
-        System.out.print("");
-        return null;
+    @RequestMapping(method = RequestMethod.PUT , consumes = {MediaType.APPLICATION_JSON_VALUE,
+            MediaType.APPLICATION_XML_VALUE})
+    public @ResponseBody UserVo addUser(@RequestBody UserVo userVo) {
+        return userService.addUser(userVo);
     }
 }

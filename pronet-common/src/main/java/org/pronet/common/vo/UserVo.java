@@ -7,12 +7,14 @@ package org.pronet.common.vo;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 @XmlRootElement(name = "user")
-public class  UserVo {
+public class  UserVo extends BaseVo{
     private String firstName;
     private String lastName;
     private String guid;
+    private List<SkillVo> skills;
 
     public String getFirstName() {
         return firstName;
@@ -40,4 +42,15 @@ public class  UserVo {
     public void setGuid(String guid) {
         this.guid = guid;
     }
+
+    public List<SkillVo> getSkills(){
+        return this.skills;
+    }
+    @XmlElement
+    public void setSkills(List<SkillVo> skills) {
+        this.skills = skills;
+    }
+
+
+
 }

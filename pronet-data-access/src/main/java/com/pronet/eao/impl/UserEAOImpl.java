@@ -11,10 +11,7 @@ import javax.persistence.PersistenceContext;
  * Created by pr250155 on 5/19/17.
  */
 @Repository("userEAOImpl")
-public class UserEAOImpl implements UserEAO {
-
-    @PersistenceContext
-    private EntityManager manager;
+public class UserEAOImpl extends GenericEAOImpl<UserEntity> implements UserEAO {
 
     @Override
     public UserEntity getUserEntity(int userId) {

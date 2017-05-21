@@ -7,4 +7,5 @@ import com.pronet.entity.UserEntity;
  */
 public interface UserEAO {
     public UserEntity getUserEntity(int userId);
+    UserEntity save(UserEntity userEntity);
 }

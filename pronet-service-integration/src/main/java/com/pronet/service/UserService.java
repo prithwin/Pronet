@@ -7,4 +7,5 @@ import org.pronet.common.vo.UserVo;
  */
 public interface UserService {
     public UserVo getUser(int userId);
+    UserVo addUser(UserVo userVo);
 }

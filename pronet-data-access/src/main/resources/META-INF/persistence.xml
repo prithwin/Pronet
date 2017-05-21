@@ -4,6 +4,8 @@
     <persistence-unit name="proconpu">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.pronet.entity.UserEntity</class>
+        <class>com.pronet.entity.SkillEntity</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/procon"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
