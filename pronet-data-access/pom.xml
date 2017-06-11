@@ -125,6 +125,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.personal.util</groupId>
+            <artifactId>adt-utils</artifactId>
+        </dependency>
     </dependencies>
 
 

@@ -1,0 +1,11 @@
+copy C:\Users\prith\git-home\Pronet\pronet-web\target\pronet-web-1.0-SNAPSHOT.war C:\Users\prith\precompiled\apache-tomcat-8.5.15\webapps\pronet.war
+cd C:\Users\prith\precompiled\apache-tomcat-8.5.15\bin\startup.bat
+
+del C:\Users\prith\precompiled\apache-tomcat-8.5.15\webapps\pronet.war
+del C:\Users\prith\precompiled\apache-tomcat-8.5.15\webapps\pronet
+del C:\Users\prith\precompiled\apache-tomcat-8.5.15\temp
+del C:\Users\prith\precompiled\apache-tomcat-8.5.15\work
+
+
+
+mvn install:install-file -Dfile=.\adt-utils.jar -DgroupId=com.personal.util -DartifactId=adt-utils -Dversion=1.0 -Dpackaging=jar

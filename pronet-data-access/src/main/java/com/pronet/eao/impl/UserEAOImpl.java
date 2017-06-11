@@ -13,7 +13,6 @@ import javax.persistence.PersistenceContext;
 @Repository("userEAOImpl")
 public class UserEAOImpl extends GenericEAOImpl<UserEntity> implements UserEAO {
 
-    @Override
     public UserEntity getUserEntity(int userId) {
         return manager.find(UserEntity.class,userId);
     }

@@ -12,7 +12,6 @@ import java.io.IOException;
  * Created by pr250155 on 5/20/17.
  */
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
-    @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Unauthorized");
     }

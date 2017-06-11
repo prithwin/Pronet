@@ -22,13 +22,11 @@ public class UserServiceImpl implements UserService {
     @Resource(name="userEAOImpl")
     private UserEAO userEAO;
 
-    @Override
     public UserVo getUser(int userId) {
         UserEntity userEntity = userEAO.getUserEntity(userId);
         return UserMapper.mapUserEntityToVo(userEntity);
     }
 
-    @Override
     @Transactional(REQUIRES_NEW)
     public UserVo addUser(UserVo user) {
         user.setGuid(UUID.randomUUID().toString());

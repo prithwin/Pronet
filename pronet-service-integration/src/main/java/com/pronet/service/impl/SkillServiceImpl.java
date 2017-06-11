@@ -20,7 +20,6 @@ public class SkillServiceImpl implements SkillService{
     private SkillEAO skillEAO;
 
     @Transactional
-    @Override
     public SkillVo addSkill(SkillVo skill) {
         SkillEntity skillEntity = SkillMapper.mapSkillVoToEntity(skill);
         return SkillMapper.mapEntityToVo(skillEAO.addSkill(skillEntity));

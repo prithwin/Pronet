@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class SkillEAOImpl extends GenericEAOImpl<SkillEntity> implements SkillEAO {
 
-    @Override
     public SkillEntity addSkill(SkillEntity skillEntity) {
         return save(skillEntity);
     }
